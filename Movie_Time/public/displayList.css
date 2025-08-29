@@ -1,0 +1,130 @@
+/* Conteneur principal des listes */
+#lists-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+/* Liens des listes */
+.list-item {
+    background: #2c3e50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.list-item:hover {
+    transform: translateY(-2px);
+    background: #34495e;
+}
+
+/* Conteneur des films */
+#movies-container {
+    display: flex;
+    flex-direction: column; /* Affiche en colonne : titre, films, bouton */
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Conteneur des cartes de films */
+.movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+
+/* Cartes des films */
+.movie-card {
+    background: #ecf0f1;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 180px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+}
+
+.movie-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Image du film */
+.movie-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Titre du film */
+.movie-title {
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Bouton supprimer film */
+.delete-movie {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background: #bdc3c7;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.delete-movie:hover {
+    background: #95a5a6;
+}
+
+/* Bouton supprimer liste (petit et discret) */
+.delete-list-item {
+    display: inline;
+    /* Supprime l'effet de bloc */
+    font-size: 14px;
+    /* Réduction de la taille du texte */
+    color: #e74c3c;
+    /* Rouge pour l'effet d'alerte */
+    font-weight: normal;
+    /* Texte pas trop gros */
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 10px;
+    /* Un peu d'espace si nécessaire */
+}
+
+.delete-list-item:hover {
+    text-decoration: underline;
+    /* Effet au survol */
+    color: #c0392b;
+}
+
+
+
+/* Titre de la liste de films */
+h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}

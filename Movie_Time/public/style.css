@@ -1,0 +1,612 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #141414;
+  color: #fff;
+}
+
+header {
+  background-color: #141414;
+  padding: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  color: #e50914;
+  text-decoration: none;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-form input[type="text"] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-form button {
+  padding: 8px;
+  border: none;
+  background-color: #e50914;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+main {
+  padding: 20px;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+}
+
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.movie-card {
+  width: 150px;
+  background-color: #222;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  display: block;
+}
+
+.movie-info {
+  padding: 10px;
+}
+
+.movie-info h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Conteneur général pour les filtres */
+.filter-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  /* Centre horizontalement */
+  margin: 20px 0;
+}
+
+/* Chaque bloc de filtre (pour films ou séries) */
+.filter-dropdown {
+  flex: 1;
+  max-width: 300px;
+}
+
+/* Titre de chaque filtre */
+.filter-dropdown h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+/* Style pour le sélecteur (adapté pour ressembler à un bouton) */
+.filter-dropdown select {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #e50914;
+  /* Couleur de base */
+  color: #fff;
+  transition: background-color 0.3s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Pour cacher la flèche native et ajouter éventuellement une flèche personnalisée */
+.filter-dropdown select::-ms-expand {
+  display: none;
+}
+
+.filter-dropdown::after {
+  content: '\25BC';
+  position: absolute;
+  right: 20px;
+  /* Ajustez selon vos besoins */
+  top: calc(50% - 7px);
+  pointer-events: none;
+  color: #fff;
+}
+
+/* Effet de survol sur le sélecteur */
+.filter-dropdown select:hover {
+  background-color: #f40612;
+}
+
+/* Vous pouvez aussi garder votre CSS existant pour d'autres boutons, par exemple : */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  /* Ajuste l'espacement entre les boutons */
+  align-items: center;
+  /* Alignement vertical */
+  justify-content: center;
+  /* Centre les boutons si nécessaire */
+}
+
+.btn-classique {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-classique:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-classique:active {
+  background-color: #004085;
+  transform: scale(1);
+}
+
+.btn-classique:focus {
+  outline: none;
+}
+
+
+
+.filter-btn {
+  background-color: #e50914;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: #f40612;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.details-poster img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.details-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.details-overview {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Styled buttons */
+.list-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.list-buttons button {
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+  width: 80%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* "Create a List" button */
+#btnList {
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+  color: white;
+}
+
+#btnList:hover {
+  background: linear-gradient(135deg, #ff4757, #e63946);
+  transform: scale(1.05);
+}
+
+/* "Add to an Existing List" button */
+#btnAddList {
+  background: linear-gradient(135deg, #1e90ff, #007bff);
+  color: white;
+}
+
+#btnAddList:hover {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  transform: scale(1.05);
+}
+
+/* "Rate" Section */
+.rating-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.single-star {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.single-star:hover {
+  color: #FFD700;
+  transform: scale(1.2);
+}
+
+#immediate-rating-text {
+  font-size: 30px;
+  color: #FFD700;
+  display: none;
+  /* Afficher uniquement lorsque la note est confirmée */
+  margin-top: 10px;
+}
+
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+/* Rating Stars */
+.star-rating-popup {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.star-popup {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.star-popup:hover,
+.star-popup.active {
+  color: #FFD700;
+  transform: scale(1.2);
+}
+
+/* Popup buttons */
+#confirm-rating-button,
+#cancel-rating-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 20px;
+  border: none;
+  transition: 0.3s;
+}
+
+#confirm-rating-button {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+}
+
+#confirm-rating-button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+#cancel-rating-button {
+  background-color: red;
+  color: white;
+  display: none;
+}
+
+#cancel-rating-button:hover {
+  background-color: darkred;
+  transform: scale(1.05);
+}
+
+#immediate-rating-text {
+  font-size: 30px;
+  color: #FFD700;
+  display: none;
+  margin-top: 10px;
+}
+
+.list-title {
+  color: darkred;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.ListContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  max-width: 600px;
+  height: 50vh;
+  max-height: 500px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow-y: auto;
+  display: flex;
+  /* Utiliser flexbox pour aligner les boutons horizontalement */
+  gap: 10px;
+  /* Espace de 10px entre les boutons */
+  flex-direction: column;
+
+}
+
+
+.ListContainer button.listButton {
+  width: 70px;
+  /* Largeur du bouton (carré) */
+  height: 70px;
+  /* Hauteur du bouton (carré) */
+  padding: 0;
+  /* Supprimer tout remplissage pour garantir que les boutons sont carrés */
+  border: none;
+  /* Supprimer la bordure du bouton */
+  background: #007BFF;
+  /* Couleur de fond */
+  color: white;
+  /* Couleur du texte */
+  cursor: pointer;
+  /* Changer le curseur au survol */
+  border-radius: 5px;
+  /* Arrondir les coins légèrement */
+  display: flex;
+
+  /* Utiliser flexbox pour centrer le contenu à l'intérieur du bouton */
+  justify-content: center;
+  /* Centrer le contenu horizontalement */
+  align-items: center;
+  /* Centrer le contenu verticalement */
+  font-size: 18px;
+  /* Ajuster la taille du texte ou de l'icône à l'intérieur */
+}
+
+.ListContainer button.listButton:hover {
+  background: #0056b3;
+  /* Changer la couleur au survol */
+}
+
+.ListContainer button.listButton:focus {
+  outline: none;
+  /* Retirer le contour lorsqu'on clique sur le bouton */
+}
+
+.ListContainer button:first-child {
+  background: red;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  /* Ajuste la taille intérieure */
+  font-size: 10px;
+  /* Ajuste la taille du texte */
+  width: 60px;
+  /* Largeur personnalisée */
+  height: 30px;
+  /* Hauteur personnalisée */
+  border-radius: 5px;
+  /* Coins arrondis pour un meilleur design */
+  position: fixed;
+  /*bottom: 20px; /* Place le bouton à 20px du bas */
+  right: 20px;
+}
+
+.ListContainer button:first-child:hover {
+  background: darkred;
+}
+
+.no-image {
+  width: 150px;
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.no-image p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+
+
+
+
+
+/* CSS FOR THE POPUPS */
+.popup_conteneur {
+  z-index: 1;
+  position: fixed;
+  top: 0em;
+  padding-top: 1em;
+  left: 50%;
+  transform: translate(-50%);
+  width: 25%;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+/* Style des popups */
+.MessagePopup {
+  z-index: 1201;
+  border-radius: 2em;
+  padding: 1em;
+  background: lightgray;
+  box-shadow: 1px 1px 5px 5px black;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+/* Titre */
+.MessagePopup h3 {
+  margin-bottom: 0;
+  font-size: 1.2em;
+  color: black;
+}
+
+/* Texte */
+.MessagePopup p {
+  margin-top: 8px;
+  font-size: 1em;
+  color: black;
+}
+
+/* Champ de texte */
+.popup-input {
+  width: calc(100% - 20px);
+  padding: 0.5em;
+  margin-top: 10px;
+  border: 1px solid #aaa;
+  border-radius: 1em;
+  font-size: 1em;
+  text-align: center;
+}
+
+/* Conteneur des boutons */
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Style des boutons */
+.popup-buttons button {
+  flex: 1;
+  padding: 0.5em;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+
+/* Bouton Confirmer */
+.confirm-btn {
+  background: green;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background: darkgreen;
+}
+
+/* Bouton Annuler */
+.cancel-btn {
+  background: darkred;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: red;
+}
+
+/* Désactiver le bouton de confirmation */
+.confirm-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Animation des popups */
+.MessagePopup.active {
+  transform: translateY(0);
+  opacity: 1;
+  background-color: red;
+}
+
+.MessagePopup.closing {
+  transform: translateY(0);
+  opacity: 0;
+}
